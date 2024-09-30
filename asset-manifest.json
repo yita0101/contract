@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8d45ad3c.css",
+    "main.js": "./static/js/main.347045a5.js",
+    "static/media/hacash_web_api_bg.wasm": "./static/media/hacash_web_api_bg.b0771f44f326fe738786.wasm",
+    "index.html": "./index.html",
+    "main.8d45ad3c.css.map": "./static/css/main.8d45ad3c.css.map",
+    "main.347045a5.js.map": "./static/js/main.347045a5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d45ad3c.css",
+    "static/js/main.347045a5.js"
+  ]
+}
