@@ -1,0 +1,160 @@
+.hac-hacd-swap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .hac-hacd-swap {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}
+
+.result-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.button-group {
+  margin-bottom: 15px;
+}
+
+.button-group button, .button-group a {
+  margin-right: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.button-group a {
+  display: inline-block;
+}
+
+.txbody {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+pre {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.transaction-info {
+  margin-bottom: 15px;
+}
+
+.transaction-info p {
+  margin: 5px 0;
+  word-break: break-all;
+}
+
+.transaction-info .label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.transaction-info .value {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .transaction-info .value {
+    font-size: 10px;
+  }
+
+  .txbody {
+    font-size: 10px;
+  }
+}
