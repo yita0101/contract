@@ -17,20 +17,20 @@ function HacHacdSwap() {
 
   const [result, setResult] = useState(null);
 
-//   useEffect(() => {
-//     // 填充测试数据
-//     setFormData({
-//       address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-//       hacdInput1: "YIYBAB,YAYBAB",
-//       hacAmount1: "1:248",
-//       address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-//       hacdInput2: "SYSBAY",
-//       hacAmount2: "2:248",
-//       paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-//       exchangeRate: "1:245",
-//       transactionTimeLimit: "1727597901"
-//     });
-//   }, []);
+  useEffect(() => {
+    // 填充测试数据
+    setFormData({
+      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+      hacdInput1: "YIYBAB,YAYBAB",
+      hacAmount1: "1:248",
+      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+      hacdInput2: "SYSBAY",
+      hacAmount2: "2:248",
+      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+      exchangeRate: "1:245",
+      transactionTimeLimit: "1727597901"
+    });
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -66,10 +66,13 @@ function HacHacdSwap() {
         BigInt(data.transactionTimeLimit || defaultTimeLimit) // 如果未填写时间限制，使用默认值
       );
 
-      console.log(result);
       let resultJson = JSON.parse(result)
-      console.log('交易创建结果:', resultJson);
-      setResult(resultJson);
+      if(resultJson.code == 1){
+        setResult(resultJson.data)
+        console.log(resultJson);
+      }else{
+        alert(resultJson.message)
+      }
 
     } catch (error) {
       console.error('交易创建失败:', error);
@@ -144,14 +147,14 @@ function HacHacdSwap() {
           name="exchangeRate"
           value={formData.exchangeRate}
           onChange={handleInputChange}
-          placeholder="ㄜ1:245"
+          placeholder="手续费（默认：ㄜ1:245）"
         />
         <input
           type="text"
           name="transactionTimeLimit"
           value={formData.transactionTimeLimit}
           onChange={handleInputChange}
-          placeholder="选填：交易时间限"
+          placeholder="选填：交易时间戳，不填则使用当前时间戳"
         />
         <button type="submit">确认创建 HAC 和 HACD 原子互换交易</button>
       </form>
@@ -170,6 +173,10 @@ function HacHacdSwap() {
           </div>
 
           <div className="transaction-info">
+             <p className="fee">
+              <span className="label">[手续费/fee]</span>
+              <span className="value">{formData.exchangeRate || 'ㄜ1:245'}</span>
+            </p>
             <p className="txhash">
               <span className="label">[交易哈希/txhash]</span>
               <span className="value">{result.txhash}</span>
