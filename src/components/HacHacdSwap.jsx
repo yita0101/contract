@@ -20,7 +20,7 @@ function HacHacdSwap() {
 
   const [result, setResult] = useState(null);
 
-
+  // useEffect(() => {
   //   // 填充测试数据
   //   setFormData({
   //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
@@ -33,7 +33,7 @@ function HacHacdSwap() {
   //     exchangeRate: "1:245",
   //     transactionTimeLimit: "1727597901"
   //   });
-  // }, []);
+  // }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -96,7 +96,7 @@ function HacHacdSwap() {
       <h1>{t('title')}</h1>
         <p className="warning">{t('warning')}</p>
       <p>{t('description')}</p>
-      
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -168,7 +168,7 @@ function HacHacdSwap() {
         <div className="result-container">
           <h2>{t('successTitle')}</h2>
           <p>{t('successDescription')}</p>
-          
+
           <div className="button-group">
             <button onClick={() => copyToClipboard(result.txbody)}>{t('copyTxbody')}</button>
             <button onClick={() => copyToClipboard(result.txhash)}>{t('copyTxhash')}</button>
