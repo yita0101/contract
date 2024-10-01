@@ -1,0 +1,23 @@
+{
+  "title": "Create HAC and HACD Mixed Transfer Transaction",
+  "description": "Create an atomic mixed transfer transaction of HAC and HACD. The transaction is atomic, it can only succeed simultaneously and will not allow one party to fail.",
+  "address1": "Address One",
+  "hacdInput1": "Outgoing HACD, enter a comma-separated list of diamond literal values, max 200",
+  "hacAmount1": "Outgoing HAC amount - HAC (unit: piece-:248) can also use 'ㄜ1:248' format, e.g.: '0.25' or 'ㄜ25:246'",
+  "address2": "Address Two",
+  "hacdInput2": "Outgoing HACD, enter a comma-separated list of diamond literal values, max 200",
+  "hacAmount2": "Outgoing HAC amount - HAC (unit: piece-:248) can also use 'ㄜ1:248' format, e.g.: '0.25' or 'ㄜ25:246'",
+  "paymentAddress": "Fee Payment Address",
+  "exchangeRate": "Fee (Default: ㄜ1:245)",
+  "transactionTimeLimit": "Optional: Transaction timestamp, current timestamp will be used if not filled",
+  "submitButton": "Confirm Creation of HAC and HACD Atomic Swap Transaction",
+  "successTitle": "HAC and HACD Atomic Swap Transaction Created Successfully!",
+  "successDescription": "Please copy the [Transaction Body/txbody] content below, complete the signature operation first, then submit the transaction to the online wallet:",
+  "copyTxbody": "Copy txbody",
+  "copyTxhash": "Copy txhash",
+  "viewInExplorer": "View in Block Explorer",
+  "fee": "Fee",
+  "txhash": "Transaction Hash",
+  "timestamp": "Timestamp",
+  "txbody": "Transaction Body"
+}

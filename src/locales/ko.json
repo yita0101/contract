@@ -1,0 +1,23 @@
+{
+  "title": "HAC 및 HACD 혼합 전송 트랜잭션 생성",
+  "description": "HAC 및 HACD의 원자적 혼합 전송 트랜잭션을 생성합니다. 트랜잭션은 원자적이며 동시에 성공할 수 있으며 한 쪽이 실패하는 것을 허용하지 않습니다.",
+  "address1": "주소 1",
+  "hacdInput1": "송출 HACD, 쉼표로 구분된 다이아몬드 값 목록 입력, 최대 200개",
+  "hacAmount1": "송출 HAC 양 - HAC(단위: 개-:248) 'ㄜ1:248' 형식도 사용 가능, 예: '0.25' 또는 'ㄜ25:246'",
+  "address2": "주소 2",
+  "hacdInput2": "송출 HACD, 쉼표로 구분된 다이아몬드 값 목록 입력, 최대 200개",
+  "hacAmount2": "송출 HAC 양 - HAC(단위: 개-:248) 'ㄜ1:248' 형식도 사용 가능, 예: '0.25' 또는 'ㄜ25:246'",
+  "paymentAddress": "수수료 지불 주소",
+  "exchangeRate": "수수료(기본값: ㄜ1:245)",
+  "transactionTimeLimit": "선택 사항: 트랜잭션 타임스탬프, 입력하지 않으면 현재 타임스탬프가 사용됩니다",
+  "submitButton": "HAC 및 HACD 원자 교환 트랜잭션 생성 확인",
+  "successTitle": "HAC 및 HACD 원자 교환 트랜잭션이 성공적으로 생성되었습니다!",
+  "successDescription": "아래 [트랜잭션 본문/txbody] 내용을 복사하고, 먼저 서명 작업을 완료한 다음 온라인 지갑에 트랜잭션을 제출하세요:",
+  "copyTxbody": "txbody 복사",
+  "copyTxhash": "txhash 복사",
+  "viewInExplorer": "블록 탐색기에서 보기",
+  "fee": "수수료",
+  "txhash": "트랜잭션 해시",
+  "timestamp": "타임스탬프",
+  "txbody": "트랜잭션 본문"
+}

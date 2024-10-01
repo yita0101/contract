@@ -1,0 +1,23 @@
+{
+  "title": "HAC ve HACD Karışık Transfer İşlemi Oluştur",
+  "description": "HAC ve HACD'nin atomik karışık transfer işlemini oluşturun. İşlem atomiktir, yalnızca eşzamanlı olarak başarılı olabilir ve bir tarafın başarısız olmasına izin vermez.",
+  "address1": "Adres Bir",
+  "hacdInput1": "Giden HACD, virgülle ayrılmış elmas değerleri listesi girin, maksimum 200",
+  "hacAmount1": "Giden HAC miktarı - HAC (birim: parça-:248) ayrıca 'ㄜ1:248' formatını kullanabilir, örn.: '0.25' veya 'ㄜ25:246'",
+  "address2": "Adres İki",
+  "hacdInput2": "Giden HACD, virgülle ayrılmış elmas değerleri listesi girin, maksimum 200",
+  "hacAmount2": "Giden HAC miktarı - HAC (birim: parça-:248) ayrıca 'ㄜ1:248' formatını kullanabilir, örn.: '0.25' veya 'ㄜ25:246'",
+  "paymentAddress": "Ücret Ödeme Adresi",
+  "exchangeRate": "Ücret (Varsayılan: ㄜ1:245)",
+  "transactionTimeLimit": "İsteğe bağlı: İşlem zaman damgası, doldurulmazsa mevcut zaman damgası kullanılacak",
+  "submitButton": "HAC ve HACD Atomik Takas İşlemi Oluşturmayı Onayla",
+  "successTitle": "HAC ve HACD Atomik Takas İşlemi Başarıyla Oluşturuldu!",
+  "successDescription": "Lütfen aşağıdaki [İşlem Gövdesi/txbody] içeriğini kopyalayın, önce imza işlemini tamamlayın, ardından işlemi çevrimiçi cüzdana gönderin:",
+  "copyTxbody": "Txbody'yi kopyala",
+  "copyTxhash": "Txhash'i kopyala",
+  "viewInExplorer": "Blok Gezgininde Görüntüle",
+  "fee": "Ücret",
+  "txhash": "İşlem Hash'i",
+  "timestamp": "Zaman Damgası",
+  "txbody": "İşlem Gövdesi"
+}

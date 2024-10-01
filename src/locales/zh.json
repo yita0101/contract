@@ -1,0 +1,23 @@
+{
+  "title": "创建 HAC 与 HACD 混合转账交易",
+  "description": "创建一笔 HAC 与 HACD 的原子混合转账交易。交易是原子事务，只可能同时成功，不会让其中转账一方失败。",
+  "address1": "地址一",
+  "hacdInput1": "转出HACD，输入逗号隔开的钻石字面值列表，最多转200个",
+  "hacAmount1": "转出HAC的数量 - HAC（单位：枚-:248）也可直接使用 'ㄜ1:248' 格式，例如：'0.25' or 'ㄜ25:246'",
+  "address2": "地址二",
+  "hacdInput2": "转出HACD，输入逗号隔开的钻石字面值列表，最多转200个",
+  "hacAmount2": "转出HAC数量 - HAC（单位：枚-:248）也可直接使用 'ㄜ1.248' 格式，例如：'0.25' or 'ㄜ25:246'",
+  "paymentAddress": "支付手续费地址",
+  "exchangeRate": "手续费（默认：ㄜ1:245）",
+  "transactionTimeLimit": "选填：交易时间戳，不填则使用当前时间戳",
+  "submitButton": "确认创建 HAC 和 HACD 原子互换交易",
+  "successTitle": "HAC和HACD原子互换交易创建成功！",
+  "successDescription": "请复制下面 [交易体/txbody] 内容，先完成签名操作，然后去在线钱包提交交易:",
+  "copyTxbody": "复制 txbody",
+  "copyTxhash": "复制 txhash",
+  "viewInExplorer": "在区块浏览器中查看",
+  "fee": "手续费/fee",
+  "txhash": "交易哈希/txhash",
+  "timestamp": "时间戳/timestamp",
+  "txbody": "交易体/txbody"
+}

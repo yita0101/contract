@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './HacHacdSwap.css';
 import init,{hacash_transfer} from "hacash_web_api"
 
 function HacHacdSwap() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     address1: '',
     hacdInput1: '',
@@ -90,118 +93,107 @@ function HacHacdSwap() {
 
   return (
     <div className="hac-hacd-swap">
-      <h1>创建 HAC 与 HACD 混合转账交易</h1>
-      <p>创建一笔 HAC 与 HACD 的原子混合转账交易。交易是原子事务，只可能同时成功，不会让其中转账一方失败。</p>
+      <h1>{t('title')}</h1>
+      <p>{t('description')}</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="address1"
           value={formData.address1}
           onChange={handleInputChange}
-          placeholder="地址一"
+          placeholder={t('address1')}
         />
         <input
           type="text"
           name="hacdInput1"
           value={formData.hacdInput1}
           onChange={handleInputChange}
-          placeholder="转出HACD，输入逗号隔开的钻石字面值列表，最多转200个"
+          placeholder={t('hacdInput1')}
         />
         <input
           type="text"
           name="hacAmount1"
           value={formData.hacAmount1}
           onChange={handleInputChange}
-          placeholder="转出HAC的数量 - HAC（单位：枚-:248）也可直接使用 'ㄜ1:248' 格式，例如：'0.25' or 'ㄜ25:246'"
+          placeholder={t('hacAmount1')}
         />
         <input
           type="text"
           name="address2"
           value={formData.address2}
           onChange={handleInputChange}
-          placeholder="地址二"
+          placeholder={t('address2')}
         />
         <input
           type="text"
           name="hacdInput2"
           value={formData.hacdInput2}
           onChange={handleInputChange}
-          placeholder="转出HACD，输入逗号隔开的钻石字面值列表，最多转200个"
+          placeholder={t('hacdInput2')}
         />
         <input
           type="text"
           name="hacAmount2"
           value={formData.hacAmount2}
           onChange={handleInputChange}
-          placeholder="转出HAC数量 - HAC（单位：枚-:248）也可直接使用 'ㄜ1.248' 格式，例如：'0.25' or 'ㄜ25:246'"
+          placeholder={t('hacAmount2')}
         />
         <input
           type="text"
           name="paymentAddress"
           value={formData.paymentAddress}
           onChange={handleInputChange}
-          placeholder="支付手续费地址"
+          placeholder={t('paymentAddress')}
         />
         <input
           type="text"
           name="exchangeRate"
           value={formData.exchangeRate}
           onChange={handleInputChange}
-          placeholder="手续费（默认：ㄜ1:245）"
+          placeholder={t('exchangeRate')}
         />
         <input
           type="text"
           name="transactionTimeLimit"
           value={formData.transactionTimeLimit}
           onChange={handleInputChange}
-          placeholder="选填：交易时间戳，不填则使用当前时间戳"
+          placeholder={t('transactionTimeLimit')}
         />
-        <button type="submit">确认创建 HAC 和 HACD 原子互换交易</button>
+        <button type="submit">{t('submitButton')}</button>
       </form>
 
       {result && (
         <div className="result-container">
-          <h2>HAC和HACD原子互换交易创建成功！</h2>
-          <p>请复制下面 [交易体/txbody] 内容，先完成签名操作，然后去在线钱包提交交易:</p>
+          <h2>{t('successTitle')}</h2>
+          <p>{t('successDescription')}</p>
           
           <div className="button-group">
-            <button onClick={() => copyToClipboard(result.txbody)}>复制 txbody</button>
-            <button onClick={() => copyToClipboard(result.txhash)}>复制 txhash</button>
+            <button onClick={() => copyToClipboard(result.txbody)}>{t('copyTxbody')}</button>
+            <button onClick={() => copyToClipboard(result.txhash)}>{t('copyTxhash')}</button>
             <a href={`https://explorer.hacash.org/tx/${result.txhash}`} target="_blank" rel="noopener noreferrer">
-              在区块浏览器中查看
+              {t('viewInExplorer')}
             </a>
           </div>
 
           <div className="transaction-info">
-             <p className="fee">
-              <span className="label">[手续费/fee]</span>
+            <p className="fee">
+              <span className="label">[{t('fee')}]</span>
               <span className="value">{formData.exchangeRate || 'ㄜ1:245'}</span>
             </p>
             <p className="txhash">
-              <span className="label">[交易哈希/txhash]</span>
+              <span className="label">[{t('txhash')}]</span>
               <span className="value">{result.txhash}</span>
             </p>
             <p className="timestamp">
-              <span className="label">[时间戳/timestamp]</span>
+              <span className="label">[{t('timestamp')}]</span>
               <span className="value">{result.timestamp}</span>
             </p>
           </div>
 
-          <p>[交易体/txbody]</p>
+          <p>[{t('txbody')}]</p>
           <pre className="txbody">
             {result.txbody}
           </pre>
-{/* 
-          <p>需要签名的地址:</p>
-          <ul>
-            {[formData.hacAddress, formData.hacdAddress, formData.paymentAddress].filter(Boolean).map((address, index) => (
-              <li key={index}>
-                {index + 1}). {address} &lt;需要签名&gt;
-              </li>
-            ))}
-          </ul>
-
-          <p>注意: 所有发生转出操作或支付手续费的地址都需要进行签名。</p> */}
         </div>
       )}
     </div>
