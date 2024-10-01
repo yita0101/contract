@@ -20,20 +20,20 @@ function HacHacdSwap() {
 
   const [result, setResult] = useState(null);
 
-  useEffect(() => {
-    // 填充测试数据
-    setFormData({
-      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-      hacdInput1: "YIYBAB,YAYBAB",
-      hacAmount1: "1:248",
-      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-      hacdInput2: "SYSBAY",
-      hacAmount2: "2:248",
-      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-      exchangeRate: "1:245",
-      transactionTimeLimit: "1727597901"
-    });
-  }, []);
+
+  //   // 填充测试数据
+  //   setFormData({
+  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+  //     hacdInput1: "YIYBAB,YAYBAB",
+  //     hacAmount1: "1:248",
+  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+  //     hacdInput2: "SYSBAY",
+  //     hacAmount2: "2:248",
+  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+  //     exchangeRate: "1:245",
+  //     transactionTimeLimit: "1727597901"
+  //   });
+  // }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -94,7 +94,9 @@ function HacHacdSwap() {
   return (
     <div className="hac-hacd-swap">
       <h1>{t('title')}</h1>
+        <p className="warning">{t('warning')}</p>
       <p>{t('description')}</p>
+      
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -103,12 +105,12 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('address1')}
         />
-        <input
-          type="text"
+        <textarea
           name="hacdInput1"
           value={formData.hacdInput1}
           onChange={handleInputChange}
           placeholder={t('hacdInput1')}
+          className="hacd-input"
         />
         <input
           type="text"
@@ -124,12 +126,12 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('address2')}
         />
-        <input
-          type="text"
+        <textarea
           name="hacdInput2"
           value={formData.hacdInput2}
           onChange={handleInputChange}
           placeholder={t('hacdInput2')}
+          className="hacd-input"
         />
         <input
           type="text"

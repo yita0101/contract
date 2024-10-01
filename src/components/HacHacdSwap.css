@@ -2,36 +2,54 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* 添加这行 */
 }
 
 h1 {
   font-size: 24px;
   color: #333;
   margin-bottom: 10px;
+  text-align: center; /* 添加这行 */
 }
 
 p {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
+  text-align: center; /* 添加这行 */
 }
 
 form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* 添加这行 */
 }
 
-input {
+input, textarea {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  box-sizing: border-box;
+  color: #333; /* 设置文字颜色 */
+  font-weight: normal; /* 设置文字粗细 */
+  font-family: inherit; /* 确保字体一致 */
 }
 
-input::placeholder {
+textarea.hacd-input {
+  height: 100px;
+  resize: none;
+}
+
+input::placeholder, textarea::placeholder {
   color: #999;
+  text-align: left;
+  font-style: normal;
+  font-weight: normal; /* 确保占位符文字粗细一致 */
 }
 
 button {
@@ -43,6 +61,8 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%; /* 添加这行 */
+  max-width: 400px; /* 添加这行 */
 }
 
 button:hover {
@@ -52,6 +72,7 @@ button:hover {
 @media (max-width: 768px) {
   .hac-hacd-swap {
     padding: 10px;
+    width: 100%; /* 添加这行 */
   }
 
   h1 {
@@ -64,6 +85,7 @@ button:hover {
 
   input, button {
     font-size: 14px;
+    width: 100%; /* 添加这行 */
   }
 }
 
@@ -158,3 +180,137 @@ li {
     font-size: 10px;
   }
 }
+
+.hac-hacd-swap form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hac-hacd-swap input,
+.hac-hacd-swap button {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.result-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.transaction-info {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.txbody {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button,
+  .button-group a {
+    margin-bottom: 10px;
+  }
+}
+
+.instructions {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 400px; /* 添加这行 */
+  margin-left: auto; /* 添加这行 */
+  margin-right: auto; /* 添加这行 */
+}
+
+ .warning {
+  color: #d9534f;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+  text-align: center; /* 添加这行 */
+}
+
+.instructions h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.instructions ol {
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 5px;
+}
+
+.instructions .note {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .instructions {
+    padding: 15px;
+  }
+
+  .instructions h2 {
+    font-size: 16px;
+  }
+
+  .instructions li, .instructions .note {
+    font-size: 14px;
+  }
+}
+
+.hacd-input {
+  height: 90px;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+/* 确保其他输入框样式保持不变 */
+input, textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 500px; /* 增加宽度 */
+  text-align: left;
+  box-sizing: border-box; /* 确保padding不会增加总宽度 */
+}
+
+textarea.hacd-input {
+  height: 100px; /* 固定高度 */
+  resize: none; /* 禁止用户调整大小 */
+}
+
+input::placeholder, textarea::placeholder {
+  
+  /* color: #999; */
+  text-align: left;
+  font-style: normal; /* 将斜体改为正常字体 */
+}
+
+/* ... 其他样式保持不变 ... */

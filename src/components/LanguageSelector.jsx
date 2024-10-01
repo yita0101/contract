@@ -1,22 +1,25 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import '../LanguageSelector.css';
 
 function LanguageSelector() {
   const { i18n } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value);
   };
 
   return (
-    <div>
-      <button onClick={() => changeLanguage('zh')}>中文</button>
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('tr')}>Türkçe</button>
-      <button onClick={() => changeLanguage('ru')}>Русский</button>
-      <button onClick={() => changeLanguage('uk')}>Українська</button>
-      <button onClick={() => changeLanguage('ja')}>日本語</button>
-      <button onClick={() => changeLanguage('ko')}>한국어</button>
+    <div className="language-selector">
+      <select onChange={changeLanguage} value={i18n.language}>
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+        <option value="ru">Русский</option>
+        <option value="uk">Українська</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+      </select>
     </div>
   );
 }

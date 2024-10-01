@@ -1,5 +1,6 @@
 {
   "title": "HAC ve HACD Karışık Transfer İşlemi Oluştur",
+  "warning": "Uyarı: Bu sayfaya özel anahtarınızı girmeyin!",
   "description": "HAC ve HACD'nin atomik karışık transfer işlemini oluşturun. İşlem atomiktir, yalnızca eşzamanlı olarak başarılı olabilir ve bir tarafın başarısız olmasına izin vermez.",
   "address1": "Adres Bir",
   "hacdInput1": "Giden HACD, virgülle ayrılmış elmas değerleri listesi girin, maksimum 200",
@@ -19,5 +20,20 @@
   "fee": "Ücret",
   "txhash": "İşlem Hash'i",
   "timestamp": "Zaman Damgası",
-  "txbody": "İşlem Gövdesi"
+  "txbody": "İşlem Gövdesi",
+  "instructionsTitle": "Talimatlar",
+  "instructions": [
+    "Adres Bir ve Adres İki, tarafların değiş tokuş etmek istediği elmas adresleridir",
+    "Her iki tarafın değiş tokuş edeceği HACD'leri girin (özel ve normal elmas değiş tokuşu)",
+    "HAC çıkış satırını boş bırakın, doldurmayın.",
+    "Ücret ödeme adresi yalnızca Adres Bir veya Adres İki olabilir",
+    "Ücret biraz fazla doldurulmalıdır, çünkü 2 işlem transferi içerir.",
+    "Oluşturmayı onayladığınızda bir sözleşme oluşturulacaktır.",
+    "Sözleşmeyi resmi çevrimdışı cüzdana götürün, işlem içeriğini doğrulamayı seçin, sözleşme içeriğini görüntüleyebilirsiniz, doğru olduğundan emin olduktan sonra, resmi çevrimdışı cüzdana gidip işlemi imzalamayı seçin, sözleşmeyi girin, bu noktada anahtarı girin ve ilk gerekli imzayı yürütmeyi tıklayın.",
+    "Taraflardan son başarılı imzalayan, çevrimdışı cüzdanın oluşturduğu txbody'yi kopyalayıp resmi web sitesindeki çevrimiçi cüzdan işlem gönderme sayfasına gidecek, dolduracak ve ana ağa gönderecektir.",
+    "İşlem bir sonraki blokta onaylanacaktır."
+  ],
+  "note": "(Not: Her işlem için 0.2 HAC ücret alınır, lütfen ücret ödeme adresinin HAC bakiyesinin > 0.3 HAC olduğundan emin olun, 0.2 ücreti sözleşme içeriği doğrulama sayfasında görebilirsiniz)",
+  "instructionsLink": "Talimatlar",
+  "backToMain": "Ana Sayfaya Dön"
 }
