@@ -1,0 +1,56 @@
+.language-selector {
+  margin: 0;
+}
+
+.language-selector select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;  /* 添加这行使文字居中 */
+  text-align-last: center;  /* 添加这行使未展开时的文字也居中 */
+  -webkit-appearance: none;  /* 移除 WebKit 浏览器的默认样式 */
+  -moz-appearance: none;  /* 移除 Firefox 的默认样式 */
+  appearance: none;  /* 移除默认的下拉箭头 */
+}
+
+.language-selector select::-ms-expand {
+  display: none;  /* 移除 IE 的默认下拉箭头 */
+}
+
+.language-selector select:hover {
+  border-color: #888;
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+/* 添加一个自定义的下拉箭头 */
+.language-selector {
+  position: relative;
+}
+
+.language-selector::after {
+  content: '\25BC';  /* 下拉箭头 Unicode */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;  /* 确保点击时不会选中箭头 */
+}
+
+@media (max-width: 600px) {
+  .language-selector {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .language-selector select {
+    width: 100%;
+  }
+}

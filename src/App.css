@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+  background-color: #f0f8ff; /* 使用淡蓝色作为背景 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: #4a90e2; /* 使用明亮的蓝色 */
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  font-family: 'Arial', sans-serif; /* 更改字体 */
+  color: #ffffff; /* 白色文字 */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* 添加轻微阴影以增加可读性 */
+}
+
+.App-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App-main > * {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.instructions-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.instructions-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .App-header {
+    flex-direction: column;
+  }
+
+  .App-header h1 {
+    margin-bottom: 10px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .instructions-link {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .App-main {
+    padding: 10px;
+  }
+
+  .App-main > * {
+    padding: 10px;
+  }
+}
+
+/* 在文件末尾添加以下样式 */
+.home-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-link:hover {
+  text-decoration: none;
+}
