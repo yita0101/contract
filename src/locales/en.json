@@ -35,5 +35,6 @@
   ],
   "note": "(Note: Each transaction charges a 0.2 HAC fee, please ensure that the HAC balance of the fee payment address is > 0.3 HAC, the 0.2 fee can be viewed on the contract content verification page)",
   "instructionsLink": "Instructions",
-  "backToMain": "Back to Main Page"
+  "backToMain": "Back to Main Page",
+  "pageTitle": "Hacash Swap Contract"
 }

@@ -35,5 +35,6 @@
   ],
   "note": "(注意:每次交易收取0.2hac手续费，请确保支付手续费地址HAC数>0.3HAC，0.2手续费可以在验证合约内容页面查看)",
   "instructionsLink": "操作说明",
-  "backToMain": "返回主页"
+  "backToMain": "返回主页",
+  "pageTitle": "Hacash 交换合约"
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import HacHacdSwap from './components/HacHacdSwap';
 import LanguageSelector from './components/LanguageSelector';
 import InstructionsPage from './components/InstructionsPage';
@@ -12,6 +13,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Helmet>
+          <title>{t('pageTitle')}</title>
+        </Helmet>
         <header className="App-header">
           <Link to="/" className="home-link">
             <h1>Hacash Swap Contract</h1>
