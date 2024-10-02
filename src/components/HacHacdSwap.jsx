@@ -105,6 +105,7 @@ function HacHacdSwap() {
           value={formData.address1}
           onChange={handleInputChange}
           placeholder={t('address1')}
+          autocomplete="off"
         />
         <textarea
           name="hacdInput1"
@@ -112,6 +113,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput1')}
           className="hacd-input"
+          autocomplete="off"
         />
         <input
           type="text"
@@ -119,6 +121,7 @@ function HacHacdSwap() {
           value={formData.hacAmount1}
           onChange={handleInputChange}
           placeholder={t('hacAmount1')}
+          autocomplete="off"
         />
         <input
           type="text"
@@ -126,6 +129,7 @@ function HacHacdSwap() {
           value={formData.address2}
           onChange={handleInputChange}
           placeholder={t('address2')}
+          autocomplete="off"
         />
         <textarea
           name="hacdInput2"
@@ -133,6 +137,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput2')}
           className="hacd-input"
+          autocomplete="off"
         />
         <input
           type="text"
@@ -140,6 +145,7 @@ function HacHacdSwap() {
           value={formData.hacAmount2}
           onChange={handleInputChange}
           placeholder={t('hacAmount2')}
+          autocomplete="off"
         />
         <input
           type="text"
@@ -147,6 +153,7 @@ function HacHacdSwap() {
           value={formData.paymentAddress}
           onChange={handleInputChange}
           placeholder={t('paymentAddress')}
+          autocomplete="off"
         />
         <input
           type="text"
@@ -154,6 +161,7 @@ function HacHacdSwap() {
           value={formData.exchangeRate}
           onChange={handleInputChange}
           placeholder={t('exchangeRate')}
+          autocomplete="off"
         />
         <input
           type="text"
@@ -161,6 +169,7 @@ function HacHacdSwap() {
           value={formData.transactionTimeLimit}
           onChange={handleInputChange}
           placeholder={t('transactionTimeLimit')}
+          autocomplete="off"
         />
         <button type="submit">{t('submitButton')}</button>
       </form>
