@@ -1,43 +1,66 @@
 .instructions {
   background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 30px;  /* 增加内边距 */
   text-align: left;
+  font-size: 16px;  /* 增加字体大小 */
+  line-height: 1.6;  /* 增加行高 */
+  width: 80%;  /* 添加宽度样式 */
+  max-width: 800px;  /* 设置最大宽度，防止在大屏幕上过宽 */
+  margin: 0 auto;  /* 居中显示 */
 }
 
-.instructions h2 {
-  font-size: 18px;
+.instructions h1 {
+  font-size: 28px;  /* 增加标题字体大小 */
+  margin-bottom: 20px;
+}
+
+.instructions h3 {
+  font-size: 20px;  /* 子标题字体大小 */
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .instructions .warning {
-  color: #d9534f;
+  color: #d32f2f;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .instructions ol {
-  padding-left: 20px;
+  list-style-type: none;  /* 移除默认的数字列表样式 */
+  padding-left: 0;  /* 移除左侧内边距 */
+  margin-bottom: 20px;  /* 增加列表底部间距 */
 }
 
 .instructions li {
-  margin-bottom: 5px;
+  margin-bottom: 15px;  /* 增加列表项间距 */
+}
+
+.instructions .sub-item {
+  margin-left: 20px;  /* 子项缩进 */
 }
 
 .instructions .note {
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
 }
 
 @media (max-width: 768px) {
   .instructions {
-    padding: 15px;
+    padding: 20px;
   }
 
-  .instructions h2 {
-    font-size: 16px;
+  .instructions h1 {
+    font-size: 24px;
+  }
+
+  .instructions h3 {
+    font-size: 18px;
   }
 
   .instructions li, .instructions .note {
@@ -46,7 +69,8 @@
 }
 
 .instructions-page {
-  max-width: 800px;
+  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -63,4 +87,105 @@
 
 .back-link:hover {
   background-color: #3a7bc8;
+}
+
+/* 大屏幕设备 */
+@media (min-width: 1200px) {
+  .instructions {
+    font-size: 18px;
+    max-width: 1000px;
+  }
+
+  .instructions h1 {
+    font-size: 32px;
+  }
+
+  .instructions h3 {
+    font-size: 24px;
+  }
+
+  .instructions-page {
+    width: 80%;
+  }
+}
+
+/* 中等屏幕设备 */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .instructions {
+    font-size: 16px;
+    max-width: 800px;
+  }
+
+  .instructions h1 {
+    font-size: 28px;
+  }
+
+  .instructions h3 {
+    font-size: 20px;
+  }
+
+  .instructions-page {
+    width: 80%;
+  }
+}
+
+/* 小屏幕设备 */
+@media (max-width: 768px) {
+  .instructions {
+    font-size: 14px;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .instructions h1 {
+    font-size: 24px;
+  }
+
+  .instructions h3 {
+    font-size: 18px;
+  }
+
+  .instructions li, .instructions .note {
+    font-size: 14px;
+  }
+
+  .instructions-page {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .back-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* 超小屏幕设备 */
+@media (max-width: 480px) {
+  .instructions {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .instructions h1 {
+    font-size: 20px;
+  }
+
+  .instructions h3 {
+    font-size: 16px;
+  }
+
+  .instructions li, .instructions .note {
+    font-size: 12px;
+  }
+
+  .back-link {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .instructions-page {
+    width: 95%;
+    padding: 5px;
+  }
 }

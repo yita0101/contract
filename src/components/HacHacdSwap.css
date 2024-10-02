@@ -1,8 +1,39 @@
 .hac-hacd-swap {
-  max-width: 600px;
+  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box; /* 添加这行 */
+  box-sizing: border-box;
+}
+
+/* 大屏幕设备 */
+@media (min-width: 1200px) {
+  .hac-hacd-swap {
+    width: 80%;
+  }
+}
+
+/* 中等屏幕设备 */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .hac-hacd-swap {
+    width: 80%;
+  }
+}
+
+/* 小屏幕设备 */
+@media (max-width: 768px) {
+  .hac-hacd-swap {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* 超小屏幕设备 */
+@media (max-width: 480px) {
+  .hac-hacd-swap {
+    width: 95%;
+    padding: 5px;
+  }
 }
 
 h1 {
