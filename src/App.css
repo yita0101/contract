@@ -14,6 +14,9 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: sticky;  /* 添加此行 */
+  top: 0;  /* 添加此行 */
+  z-index: 1000;  /* 添加此行 */
 }
 
 .App-header h1 {
@@ -32,6 +35,7 @@
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 20px;  /* 添加此行 */
 }
 
 .App-main > * {
@@ -63,6 +67,8 @@
 
 @media (max-width: 600px) {
   .App-header {
+    position: sticky;  /* 确保在移动端也保持固定 */
+    top: 0;
     flex-direction: column;
   }
 
@@ -87,6 +93,11 @@
   .App-main > * {
     padding: 10px;
   }
+
+  /* 在移动端隐藏主页按钮 */
+  .header-right .to-home {
+    display: none;
+  }
 }
 
 /* 在文件末尾添加以下样式 */
@@ -97,4 +108,9 @@
 
 .home-link:hover {
   text-decoration: none;
+}
+
+.header-right .home-link {
+  margin-right: 10px;
+  /* 添加其他需要的样式 */
 }

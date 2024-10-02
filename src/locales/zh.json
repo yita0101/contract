@@ -40,5 +40,6 @@
   "instructionsLink": "操作说明",
   "backToMain": "返回主页",
   "pageTitle": "Hacash 交换合约",
-  "submitToMainnet": "去主网提交txbody"
+  "submitToMainnet": "去主网提交txbody",
+  "homeLink": "主页"
 }

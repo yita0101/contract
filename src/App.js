@@ -22,6 +22,7 @@ function App() {
             <h1>Hacash Swap Contract</h1>
           </Link>
           <div className="header-right">
+            <Link to="/" className="instructions-link to-home">{t('homeLink')}</Link>
             <Link to="/instructions" className="instructions-link">{t('instructionsLink')}</Link>
             <LanguageSelector />
           </div>

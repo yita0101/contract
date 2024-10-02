@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './HacHacdSwap.css';
-import init,{hacash_transfer} from "hacash_web_api"
+import init,{hacash_transfer,hac_to_mei} from "hacash_web_api"
 
 function HacHacdSwap() {
   const { t } = useTranslation();
@@ -20,20 +20,20 @@ function HacHacdSwap() {
 
   const [result, setResult] = useState(null);
 
-  useEffect(() => {
-    // 填充测试数据
-    setFormData({
-      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-      hacdInput1: "YIYBAB,YAYBAB",
-      hacAmount1: "1:248",
-      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-      hacdInput2: "SYSBAY",
-      hacAmount2: "2:248",
-      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-      exchangeRate: "1:245",
-      transactionTimeLimit: "1727597901"
-    });
-  }, []); // 确保 useEffect 正确调用
+  // useEffect(() => {
+  //   // 填充测试数据
+  //   setFormData({
+  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+  //     hacdInput1: "YIYBAB,YAYBAB",
+  //     hacAmount1: "1:248",
+  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+  //     hacdInput2: "SYSBAY",
+  //     hacAmount2: "2:248",
+  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+  //     exchangeRate: "1:245",
+  //     transactionTimeLimit: "1727597901"
+  //   });
+  // }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +56,7 @@ function HacHacdSwap() {
       // 设置默认值
       const defaultFee = "ㄜ1:245"; // 默认手续费
       const defaultTimeLimit = 0;
+
 
       const result = await hacash_transfer(
         data.address1||"",
@@ -186,7 +187,7 @@ function HacHacdSwap() {
             <p className="fee">
               <span className="label">[{t('fee')}]</span>
               <br/>
-              <span className="value">{formData.exchangeRate || 'ㄜ1:245'}</span>
+              <span className="value">{formData.exchangeRate || 'ㄜ1:245'} ({hac_to_mei(formData.exchangeRate || '1:245')} HAC)</span> {/* 显示具体的HAC数量 */}
             </p>
             <p className="txhash">
               <span className="label">[{t('txhash')}]</span>
@@ -197,6 +198,8 @@ function HacHacdSwap() {
               <span className="label">[{t('timestamp')}]</span>
               <br/>
               <span className="value">{result.timestamp}</span>
+              <br/>
+              <span className="value">beijingTime: {new Date(result.timestamp * 1000).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}</span> {/* 北京时间 */}
             </p>
             <p className="timestamp">
               <span className="label">[{t('txbody')}]</span>
