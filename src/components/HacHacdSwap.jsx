@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import './HacHacdSwap.css';
 import init,{hacash_transfer,hac_to_mei} from "hacash_web_api"
@@ -19,21 +19,22 @@ function HacHacdSwap() {
   });
 
   const [result, setResult] = useState(null);
+  const txbodyRef = useRef(null);
 
-  // useEffect(() => {
-  //   // 填充测试数据
-  //   setFormData({
-  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-  //     hacdInput1: "YIYBAB,YAYBAB",
-  //     hacAmount1: "1:248",
-  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-  //     hacdInput2: "SYSBAY",
-  //     hacAmount2: "2:248",
-  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-  //     exchangeRate: "1:245",
-  //     transactionTimeLimit: "1727597901"
-  //   });
-  // }, []); // 确保 useEffect 正确调用
+  useEffect(() => {
+    // 填充测试数据
+    setFormData({
+      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+      hacdInput1: "YIYBAB,YAYBAB",
+      hacAmount1: "1:248",
+      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+      hacdInput2: "SYSBAY",
+      hacAmount2: "2:248",
+      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+      exchangeRate: "1:245",
+      transactionTimeLimit: "1727597901"
+    });
+  }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,6 +75,10 @@ function HacHacdSwap() {
       if(resultJson.code == 1){
         setResult(resultJson.data)
         console.log(resultJson);
+        // 添加一个短暂的延迟，确保DOM已更新
+        setTimeout(() => {
+          txbodyRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }else{
         alert(resultJson.message)
       }
@@ -105,7 +110,7 @@ function HacHacdSwap() {
           value={formData.address1}
           onChange={handleInputChange}
           placeholder={t('address1')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <textarea
           name="hacdInput1"
@@ -113,7 +118,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput1')}
           className="hacd-input"
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -121,7 +126,7 @@ function HacHacdSwap() {
           value={formData.hacAmount1}
           onChange={handleInputChange}
           placeholder={t('hacAmount1')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -129,7 +134,7 @@ function HacHacdSwap() {
           value={formData.address2}
           onChange={handleInputChange}
           placeholder={t('address2')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <textarea
           name="hacdInput2"
@@ -137,7 +142,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput2')}
           className="hacd-input"
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -145,7 +150,7 @@ function HacHacdSwap() {
           value={formData.hacAmount2}
           onChange={handleInputChange}
           placeholder={t('hacAmount2')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -153,7 +158,7 @@ function HacHacdSwap() {
           value={formData.paymentAddress}
           onChange={handleInputChange}
           placeholder={t('paymentAddress')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -161,7 +166,7 @@ function HacHacdSwap() {
           value={formData.exchangeRate}
           onChange={handleInputChange}
           placeholder={t('exchangeRate')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <input
           type="text"
@@ -169,7 +174,7 @@ function HacHacdSwap() {
           value={formData.transactionTimeLimit}
           onChange={handleInputChange}
           placeholder={t('transactionTimeLimit')}
-          autocomplete="off"
+          autoComplete="off"
         />
         <button type="submit">{t('submitButton')}</button>
       </form>
@@ -210,7 +215,7 @@ function HacHacdSwap() {
               <br/>
               <span className="value">beijingTime: {new Date(result.timestamp * 1000).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}</span> {/* 北京时间 */}
             </p>
-            <p className="timestamp">
+            <p className="txbody" ref={txbodyRef}>
               <span className="label">[{t('txbody')}]</span>
               <br/>
               <span className="value">{result.txbody}</span>
