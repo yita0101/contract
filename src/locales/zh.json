@@ -8,7 +8,7 @@
   "hacdInput2": "转出HACD，输入逗号隔开的钻石字面值列表，最多转200个",
   "hacAmount2": "转出HAC数量 - HAC（单位：枚-:248）也可直接使用 'ㄜ1.248' 格式，例如：'0.25' or 'ㄜ25:246'",
   "paymentAddress": "支付手续费地址",
-  "exchangeRate": "手续费（默认：ㄜ1:245）",
+  "exchangeRate": "手续费（默认：ㄜ1:245,即0.001hac）",
   "transactionTimeLimit": "选填：交易时间戳，不填则使用当前时间戳",
   "submitButton": "确认创建 HAC 和 HACD 原子互换交易",
   "successTitle": "HAC和HACD原子互换交易创建成功！",

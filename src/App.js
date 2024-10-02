@@ -5,6 +5,7 @@ import HacHacdSwap from './components/HacHacdSwap';
 import LanguageSelector from './components/LanguageSelector';
 import InstructionsPage from './components/InstructionsPage';
 import { useTranslation } from 'react-i18next';
+import './i18n'; // 确保这行存在
 import './App.css';
 
 function App() {
