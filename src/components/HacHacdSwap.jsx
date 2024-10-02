@@ -20,20 +20,20 @@ function HacHacdSwap() {
 
   const [result, setResult] = useState(null);
 
-  // useEffect(() => {
-  //   // 填充测试数据
-  //   setFormData({
-  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-  //     hacdInput1: "YIYBAB,YAYBAB",
-  //     hacAmount1: "1:248",
-  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-  //     hacdInput2: "SYSBAY",
-  //     hacAmount2: "2:248",
-  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-  //     exchangeRate: "1:245",
-  //     transactionTimeLimit: "1727597901"
-  //   });
-  // }, []); // 确保 useEffect 正确调用
+  useEffect(() => {
+    // 填充测试数据
+    setFormData({
+      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+      hacdInput1: "YIYBAB,YAYBAB",
+      hacAmount1: "1:248",
+      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+      hacdInput2: "SYSBAY",
+      hacAmount2: "2:248",
+      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+      exchangeRate: "1:245",
+      transactionTimeLimit: "1727597901"
+    });
+  }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +55,7 @@ function HacHacdSwap() {
 
       // 设置默认值
       const defaultFee = "ㄜ1:245"; // 默认手续费
-      const defaultTimeLimit = 0; // 默认1小时后过期
+      const defaultTimeLimit = 0;
 
       const result = await hacash_transfer(
         data.address1||"",
@@ -172,30 +172,39 @@ function HacHacdSwap() {
           <div className="button-group">
             <button onClick={() => copyToClipboard(result.txbody)}>{t('copyTxbody')}</button>
             <button onClick={() => copyToClipboard(result.txhash)}>{t('copyTxhash')}</button>
+            <a href="https://wallet.hacash.org" target="_blank" rel="noopener noreferrer">
+              {t('submitToMainnet')}
+            </a>
+
             <a href={`https://explorer.hacash.org/tx/${result.txhash}`} target="_blank" rel="noopener noreferrer">
               {t('viewInExplorer')}
             </a>
+
           </div>
 
           <div className="transaction-info">
             <p className="fee">
               <span className="label">[{t('fee')}]</span>
+              <br/>
               <span className="value">{formData.exchangeRate || 'ㄜ1:245'}</span>
             </p>
             <p className="txhash">
               <span className="label">[{t('txhash')}]</span>
+              <br/>
               <span className="value">{result.txhash}</span>
             </p>
             <p className="timestamp">
               <span className="label">[{t('timestamp')}]</span>
+              <br/>
               <span className="value">{result.timestamp}</span>
+            </p>
+            <p className="timestamp">
+              <span className="label">[{t('txbody')}]</span>
+              <br/>
+              <span className="value">{result.txbody}</span>
             </p>
           </div>
 
-          <p>[{t('txbody')}]</p>
-          <pre className="txbody">
-            {result.txbody}
-          </pre>
         </div>
       )}
     </div>
