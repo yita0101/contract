@@ -159,18 +159,18 @@ button:hover {
   display: block;
 }
 
-.txbody {
-  background-color: white;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 1.4;
-}
+/*.txbody {*/
+/*  background-color: white;*/
+/*  padding: 15px;*/
+/*  border: 1px solid #ddd;*/
+/*  border-radius: 4px;*/
+/*  overflow-x: auto;*/
+/*  white-space: pre-wrap;*/
+/*  word-break: break-all;*/
+/*  font-family: monospace;*/
+/*  font-size: 12px;*/
+/*  line-height: 1.4;*/
+/*}*/
 
 pre {
   background-color: #f8f8f8;
@@ -219,9 +219,9 @@ li {
     font-size: 10px;
   }
 
-  .txbody {
-    font-size: 10px;
-  }
+  /*.txbody {*/
+  /*  font-size: 10px;*/
+  /*}*/
 }
 
 .hac-hacd-swap form {
@@ -252,12 +252,12 @@ li {
   border-radius: 4px;
 }
 
-.txbody {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 4px;
-  overflow-x: auto;
-}
+/*.txbody {*/
+/*  background-color: #f0f0f0;*/
+/*  padding: 10px;*/
+/*  border-radius: 4px;*/
+/*  overflow-x: auto;*/
+/*}*/
 
 @media (max-width: 600px) {
   .button-group {
