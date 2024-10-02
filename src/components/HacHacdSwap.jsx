@@ -19,22 +19,22 @@ function HacHacdSwap() {
   });
 
   const [result, setResult] = useState(null);
-  const txbodyRef = useRef(null);
+  const resultRef = useRef(null);
 
-  // useEffect(() => {
-  //   // 填充测试数据
-  //   setFormData({
-  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-  //     hacdInput1: "YIYBAB,YAYBAB",
-  //     hacAmount1: "1:248",
-  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-  //     hacdInput2: "SYSBAY",
-  //     hacAmount2: "2:248",
-  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-  //     exchangeRate: "1:245",
-  //     transactionTimeLimit: "1727597901"
-  //   });
-  // }, []); // 确保 useEffect 正确调用
+  useEffect(() => {
+    // 填充测试数据
+    setFormData({
+      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+      hacdInput1: "YIYBAB,YAYBAB",
+      hacAmount1: "1:248",
+      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+      hacdInput2: "SYSBAY",
+      hacAmount2: "2:248",
+      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+      exchangeRate: "1:245",
+      transactionTimeLimit: "1727597901"
+    });
+  }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -77,7 +77,7 @@ function HacHacdSwap() {
         console.log(resultJson);
         // 添加一个短暂的延迟，确保DOM已更新
         setTimeout(() => {
-          txbodyRef.current?.scrollIntoView({ behavior: 'smooth' });
+          resultRef.current?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }else{
         alert(resultJson.message)
@@ -90,11 +90,43 @@ function HacHacdSwap() {
   };
 
   const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-      alert('复制成功');
-    }, (err) => {
-      console.error('复制失败: ', err);
-    });
+    if (navigator.clipboard && window.isSecureContext) {
+      // 对于支持 Clipboard API 的现代浏览器
+      navigator.clipboard.writeText(text).then(() => {
+        alert('复制成功');
+      }, (err) => {
+        console.error('复制失败: ', err);
+        fallbackCopyTextToClipboard(text);
+      });
+    } else {
+      // 对于不支持 Clipboard API 的浏览器，使用备用方法
+      fallbackCopyTextToClipboard(text);
+    }
+  };
+
+  const fallbackCopyTextToClipboard = (text) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // 避免滚动到底部
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      const successful = document.execCommand('copy');
+      const msg = successful ? '复制成功' : '复制失败';
+      alert(msg);
+    } catch (err) {
+      console.error('复制失败:', err);
+      alert('复制失败');
+    }
+
+    document.body.removeChild(textArea);
   };
 
   return (
@@ -180,7 +212,7 @@ function HacHacdSwap() {
       </form>
 
       {result && (
-        <div className="result-container">
+        <div className="result-container" ref={resultRef}>
           <h2>{t('successTitle')}</h2>
           <p>{t('successDescription')}</p>
 
@@ -215,7 +247,7 @@ function HacHacdSwap() {
               <br/>
               <span className="value">beijingTime: {new Date(result.timestamp * 1000).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}</span> {/* 北京时间 */}
             </p>
-            <p className="txbody" ref={txbodyRef}>
+            <p className="txbody" >
               <span className="label">[{t('txbody')}]</span>
               <br/>
               <span className="value">{result.txbody}</span>
