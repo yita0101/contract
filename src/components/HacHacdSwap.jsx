@@ -142,6 +142,7 @@ function HacHacdSwap() {
           value={formData.address1}
           onChange={handleInputChange}
           placeholder={t('address1')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <textarea
@@ -150,6 +151,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput1')}
           className="hacd-input"
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -158,6 +160,7 @@ function HacHacdSwap() {
           value={formData.hacAmount1}
           onChange={handleInputChange}
           placeholder={t('hacAmount1')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -166,6 +169,7 @@ function HacHacdSwap() {
           value={formData.address2}
           onChange={handleInputChange}
           placeholder={t('address2')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <textarea
@@ -174,6 +178,7 @@ function HacHacdSwap() {
           onChange={handleInputChange}
           placeholder={t('hacdInput2')}
           className="hacd-input"
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -182,6 +187,7 @@ function HacHacdSwap() {
           value={formData.hacAmount2}
           onChange={handleInputChange}
           placeholder={t('hacAmount2')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -190,6 +196,7 @@ function HacHacdSwap() {
           value={formData.paymentAddress}
           onChange={handleInputChange}
           placeholder={t('paymentAddress')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -198,6 +205,7 @@ function HacHacdSwap() {
           value={formData.exchangeRate}
           onChange={handleInputChange}
           placeholder={t('exchangeRate')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <input
@@ -206,6 +214,7 @@ function HacHacdSwap() {
           value={formData.transactionTimeLimit}
           onChange={handleInputChange}
           placeholder={t('transactionTimeLimit')}
+          onFocus={(e) => e.preventDefault()}
           autoComplete="off"
         />
         <button type="submit">{t('submitButton')}</button>
