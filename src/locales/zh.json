@@ -36,7 +36,7 @@
     "5.将签署好的提交到主网，注意各方都要签署 => https://wallet.hacash.org",
     "6.交易在下一个区块会确认成功，状态查看提交 => https://wallet.hacash.org"
   ],
-  "note": "(注意:使用本网址创建合约收取0.2hac手续费，请确保支付手续费地址HAC数>0.3HAC，0.2手续费可以在验证合约内容页面查看)",
+  "note": "(注意:使用本网址创建合约收取0.2hac手续费，请确保支付手续费地址HAC数>0.3HAC，0.2手续费可以在验证合约内容页面查看)目前已删除",
   "instructionsLink": "操作说明",
   "backToMain": "返回主页",
   "pageTitle": "Hacash 交换合约",
