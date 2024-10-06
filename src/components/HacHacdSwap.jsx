@@ -21,20 +21,20 @@ function HacHacdSwap() {
   const [result, setResult] = useState(null);
   const resultRef = useRef(null);
 
-  // useEffect(() => {
-  //   // 填充测试数据
-  //   setFormData({
-  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-  //     hacdInput1: "YIYBAB,YAYBAB",
-  //     hacAmount1: "1:248",
-  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-  //     hacdInput2: "SYSBAY",
-  //     hacAmount2: "2:248",
-  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-  //     exchangeRate: "1:245",
-  //     transactionTimeLimit: "1727597901"
-  //   });
-  // }, []); // 确保 useEffect 正确调用
+  useEffect(() => {
+    // 填充测试数据
+    setFormData({
+      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+      hacdInput1: "YIYBAB,YAYBAB",
+      hacAmount1: "1:248",
+      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+      hacdInput2: "SYSBAY",
+      hacAmount2: "2:248",
+      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+      exchangeRate: "1:245",
+      transactionTimeLimit: "1727597901"
+    });
+  }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -93,9 +93,9 @@ function HacHacdSwap() {
     if (navigator.clipboard && window.isSecureContext) {
       // 对于支持 Clipboard API 的现代浏览器
       navigator.clipboard.writeText(text).then(() => {
-        alert('复制成功');
+        alert('copy Success');
       }, (err) => {
-        console.error('复制失败: ', err);
+        console.error('copy fail', err);
         fallbackCopyTextToClipboard(text);
       });
     } else {
@@ -119,11 +119,11 @@ function HacHacdSwap() {
 
     try {
       const successful = document.execCommand('copy');
-      const msg = successful ? '复制成功' : '复制失败';
+      const msg = successful ? 'copy Success' : 'copy fail';
       alert(msg);
     } catch (err) {
-      console.error('复制失败:', err);
-      alert('复制失败');
+      console.error('copy fail:', err);
+      alert('copy fail');
     }
 
     document.body.removeChild(textArea);

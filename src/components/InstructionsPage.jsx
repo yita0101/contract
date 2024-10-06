@@ -33,7 +33,7 @@ function InstructionsPage() {
         <ol>
           {t('instructions', { returnObjects: true }).map((instruction, index) => renderInstruction(instruction, index))}
         </ol>
-        <p className="note">{t('note')}</p>
+        <p className="note" style={{ textDecoration: 'line-through' }}>{t('note')}</p>
       </div>
       <Link to="/" className="back-link">{t('backToMain')}</Link>
     </div>
