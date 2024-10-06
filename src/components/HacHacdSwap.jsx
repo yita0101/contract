@@ -21,20 +21,20 @@ function HacHacdSwap() {
   const [result, setResult] = useState(null);
   const resultRef = useRef(null);
 
-  useEffect(() => {
-    // 填充测试数据
-    setFormData({
-      address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
-      hacdInput1: "YIYBAB,YAYBAB",
-      hacAmount1: "1:248",
-      address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
-      hacdInput2: "SYSBAY",
-      hacAmount2: "2:248",
-      paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
-      exchangeRate: "1:245",
-      transactionTimeLimit: "1727597901"
-    });
-  }, []); // 确保 useEffect 正确调用
+  // useEffect(() => {
+  //   // 填充测试数据
+  //   setFormData({
+  //     address1: "1JtxZv81czJfTKMvyBZWWYtuhaMmcHF3J8",
+  //     hacdInput1: "YIYBAB,YAYBAB",
+  //     hacAmount1: "1:248",
+  //     address2: "14tDZi1bK3UJ8BbdGZK9ayopcT5zuMep9W",
+  //     hacdInput2: "SYSBAY",
+  //     hacAmount2: "2:248",
+  //     paymentAddress: "18FqRgsV52ZLVZ7bng8Tsxh3EqzmCehZj1",
+  //     exchangeRate: "1:245",
+  //     transactionTimeLimit: "1727597901"
+  //   });
+  // }, []); // 确保 useEffect 正确调用
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
