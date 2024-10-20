@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './HacHacdSwap.css';
 import init,{hacash_transfer,hac_to_mei} from "hacash_web_api"
 
+
 function HacHacdSwap() {
   const { t } = useTranslation();
 
@@ -46,7 +47,10 @@ function HacHacdSwap() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createHacHacdSwapTransaction(formData);
+    const createdTransaction = await createHacHacdSwapTransaction(formData);
+    if (createdTransaction) {
+      signTransaction(createdTransaction.txbody);
+    }
   };
 
   const createHacHacdSwapTransaction = async (data) => {
@@ -128,6 +132,39 @@ function HacHacdSwap() {
 
     document.body.removeChild(textArea);
   };
+
+  const signTransaction = (txbody) => {
+    if (window.MoneyNex) {
+      window.MoneyNex.signtx({txbody}, (response) => {
+        if (response.ret === 0) {
+          setResult(prevResult => ({
+            ...prevResult,
+            txbody: response.body,
+            signedBy: response.address
+          }));
+          console.log("交易已签名:", response);
+        } else {
+          console.error("签名失败:", response);
+          alert(t('signFailed'));
+        }
+      });
+    } else {
+      console.error("MoneyNex钱包未安装或未准备就绪");
+      alert(t('walletNotReady'));
+    }
+  };
+
+  useEffect(() => {
+    const checkWallet = () => {
+      if (window.MoneyNex) {
+        console.log("MoneyNex钱包已就绪");
+      } else {
+        console.log("等待MoneyNex钱包...");
+        setTimeout(checkWallet, 1000);
+      }
+    };
+    checkWallet();
+  }, []);
 
   return (
     <div className="hac-hacd-swap">
@@ -226,17 +263,32 @@ function HacHacdSwap() {
           <p>{t('successDescription')}</p>
 
           <div className="button-group">
-            <button onClick={() => copyToClipboard(result.txbody)}>{t('copyTxbody')}</button>
-            <button onClick={() => copyToClipboard(result.txhash)}>{t('copyTxhash')}</button>
-            <a href="https://wallet.hacash.org" target="_blank" rel="noopener noreferrer">
-              {t('submitToMainnet')}
-            </a>
-
-            <a href={`https://explorer.hacash.org/tx/${result.txhash}`} target="_blank" rel="noopener noreferrer">
-              {t('viewInExplorer')}
-            </a>
-
+            <div className="button-row single">
+              <button onClick={() => signTransaction(result.txbody)}>{t('signTransaction')}</button>
+            </div>
+            <div className="button-row">
+              <button onClick={() => copyToClipboard(result.txbody)}>{t('copyTxbody')}</button>
+              <button onClick={() => copyToClipboard(result.txhash)}>{t('copyTxhash')}</button>
+            </div>
+            <div className="button-row single">
+              <a href="https://wallet.hacash.org" target="_blank" rel="noopener noreferrer" className="button-link">
+                {t('submitToMainnet')}
+              </a>
+            </div>
+            <div className="button-row single">
+              <a href={`https://explorer.hacash.org/tx/${result.txhash}`} target="_blank" rel="noopener noreferrer" className="button-link">
+                {t('viewInExplorer')}
+              </a>
+            </div>
           </div>
+
+          {result.signedBy && (
+            <p>
+              <span className="label">[{t('signedBy')}]</span>
+              <br/>
+              <span className="value">{result.signedBy}</span>
+            </p>
+          )}
 
           <div className="transaction-info">
             <p className="fee">

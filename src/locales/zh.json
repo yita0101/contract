@@ -41,5 +41,9 @@
   "backToMain": "返回主页",
   "pageTitle": "Hacash 交换合约",
   "submitToMainnet": "去主网提交txbody",
-  "homeLink": "主页"
+  "homeLink": "主页",
+  "signTransaction": "签名交易",
+  "signedBy": "签名地址",
+  "signFailed": "签名失败",
+  "walletNotReady": "MoneyNex钱包未安装或未准备就绪"
 }

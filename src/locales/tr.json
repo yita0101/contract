@@ -36,10 +36,14 @@
     "5. İmzalanan sözleşmeyi ana ağa gönderin, tüm tarafların imzalaması gerektiğine dikkat edin => https://wallet.hacash.org",
     "6. İşlem bir sonraki blokta onaylanacaktır, gönderimden sonra durumu kontrol edin => https://wallet.hacash.org"
   ],
-  "note": "(Not: Bu web sitesini kullanarak sözleşme oluşturmak 0.2 HAC ücret gerektirir, lütfen ücret ödeme adresinin HAC bakiyesinin > 0.3 HAC olduğundan emin olun, 0.2 ücreti sözleşme içeriği doğrulama sayfasında görebilirsiniz)",
+  "note": "(Not: Bu web sitesini kullanarak sözleşme oluşturmak 0.2 HAC ücret gerektirir, lütfen ücret ödeme adresinin HAC bakiyesinin > 0.3 HAC olduğundan emin olun, 0.2 ücreti sözleşme içeriği doğrulama sayfasında görebilirsiniz) Şu anda kaldırılmış durumda",
   "instructionsLink": "Talimatlar",
   "backToMain": "Ana Sayfaya Dön",
   "pageTitle": "Hacash Takas Sözleşmesi",
   "submitToMainnet": "Txbody'yi Ana Ağa Gönder",
-  "homeLink": "Ana Sayfa"
+  "homeLink": "Ana Sayfa",
+  "signTransaction": "İşlemi İmzala",
+  "signedBy": "İmzalayan",
+  "signFailed": "İmzalama başarısız oldu",
+  "walletNotReady": "MoneyNex cüzdanı kurulu değil veya hazır değil"
 }

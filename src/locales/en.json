@@ -36,10 +36,14 @@
     "5. Submit the signed contract to the main network, note that all parties need to sign => https://wallet.hacash.org",
     "6. The transaction will be confirmed in the next block, check status after submission => https://wallet.hacash.org"
   ],
-  "note": "(Note: Using this website to create a contract incurs a 0.2 HAC fee, please ensure that the HAC balance of the fee payment address is > 0.3 HAC, the 0.2 fee can be viewed on the contract content verification page)",
+  "note": "(Note: Using this website to create a contract incurs a 0.2 HAC fee, please ensure that the HAC balance of the fee payment address is > 0.3 HAC, the 0.2 fee can be viewed on the contract content verification page) Currently removed",
   "instructionsLink": "Instructions",
   "backToMain": "Back to Main Page",
   "pageTitle": "Hacash Swap Contract",
   "submitToMainnet": "Submit txbody to Main Network",
-  "homeLink": "Home"
+  "homeLink": "Home",
+  "signTransaction": "Sign Transaction",
+  "signedBy": "Signed By",
+  "signFailed": "Signature failed",
+  "walletNotReady": "MoneyNex wallet is not installed or not ready"
 }

@@ -36,10 +36,14 @@
     "5. 서명된 계약을 메인 네트워크에 제출합니다. 모든 당사자가 서명해야 함에 주의하세요 => https://wallet.hacash.org",
     "6. 트랜잭션은 다음 블록에서 확인됩니다. 제출 후 상태를 확인하세요 => https://wallet.hacash.org"
   ],
-  "note": "(참고: 이 웹사이트를 사용하여 계약을 생성하면 0.2 HAC의 수수료가 발생합니다. 수수료 지불 주소의 HAC 잔액이 0.3 HAC 이상인지 확인하세요. 0.2 수수료는 계약 내용 확인 페이지에서 확인할 수 있습니다)",
+  "note": "(참고: 이 웹사이트를 사용하여 계약을 생성하면 0.2 HAC의 수수료가 발생합니다. 수수료 지불 주소의 HAC 잔액이 0.3 HAC 이상인지 확인하세요. 0.2 수수료는 계약 내용 확인 페이지에서 확인할 수 있습니다) 현재 제거됨",
   "instructionsLink": "작업 설명",
   "backToMain": "메인 페이지로 돌아가기",
   "pageTitle": "Hacash 교환 계약",
   "submitToMainnet": "txbody를 메인 네트워크에 제출",
-  "homeLink": "홈"
+  "homeLink": "홈",
+  "signTransaction": "트랜잭션 서명",
+  "signedBy": "서명자",
+  "signFailed": "서명 실패",
+  "walletNotReady": "MoneyNex 지갑이 설치되지 않았거나 준비되지 않았습니다"
 }
