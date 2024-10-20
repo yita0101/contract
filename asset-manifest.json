@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.98e7386c.css",
-    "main.js": "./static/js/main.667e9942.js",
+    "main.css": "./static/css/main.a365fd1d.css",
+    "main.js": "./static/js/main.998fa7c7.js",
     "static/media/hacash_nodejs_api_bg.wasm": "./static/media/hacash_nodejs_api_bg.7eebf4052f352deb4f58.wasm",
     "index.html": "./index.html",
-    "main.98e7386c.css.map": "./static/css/main.98e7386c.css.map",
-    "main.667e9942.js.map": "./static/js/main.667e9942.js.map"
+    "main.a365fd1d.css.map": "./static/css/main.a365fd1d.css.map",
+    "main.998fa7c7.js.map": "./static/js/main.998fa7c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.98e7386c.css",
-    "static/js/main.667e9942.js"
+    "static/css/main.a365fd1d.css",
+    "static/js/main.998fa7c7.js"
   ]
 }
